@@ -93,8 +93,8 @@ class _PageOneState extends State<PageOne> {
             onPressed: () {
               setState(() {
                 count++;
-                if(count>7){
-                  debugPrint("state tugadi");
+                if (count == 8) {
+                  count=0;
                 }
                 netvorkStr = images(count);
                 text = Text(
@@ -108,33 +108,10 @@ class _PageOneState extends State<PageOne> {
               });
             },
             child: const Icon(
-              CupertinoIcons.add_circled,
+              Icons.change_circle_outlined,
               size: 40,
             ),
           ),
-          FloatingActionButton(
-            onPressed: () {
-              setState(() {
-                count--;
-                if(count<0){
-                  debugPrint("state tugadi");
-                }
-                netvorkStr = images(count);
-                text = Text(
-                  textes(count),
-                  style: const TextStyle(
-                    fontSize: 16,
-                    fontWeight: FontWeight.w800,
-                  ),
-                );
-                title = titleAppBar(count);
-              });
-            },
-            child: const Icon(
-              CupertinoIcons.minus_circled,
-              size: 40,
-            ),
-          )
         ],
       ),
       floatingActionButtonLocation: FloatingActionButtonLocation.endDocked,
